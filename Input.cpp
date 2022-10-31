@@ -6,7 +6,7 @@
 
 void Input::Initialize(WinApp* winApp) {
 	// 借りてきたWinAppのインスタンスを記録
-	this->winApp = winApp;
+	winApp_ = winApp;
 
 	HRESULT result;
 
@@ -18,7 +18,7 @@ void Input::Initialize(WinApp* winApp) {
 	// キーボードデバイスの生成
 	result = directInput->CreateDevice(GUID_SysKeyboard, &keyboard, NULL);
 	// 入力データ形式のセット
-	result = keyboard->SetDataFormat(&c_dfDIKeyboard); // 標準形式
+	result = keyboard->SetDataFormat(&c_dfDIKeyboard);		// 標準形式
 	assert(SUCCEEDED(result));
 	// 排他制御レベルのセット
 	result = keyboard->SetCooperativeLevel(

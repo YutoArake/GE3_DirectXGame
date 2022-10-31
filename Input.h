@@ -37,7 +37,7 @@ public: // メンバ関数
 
 private: // メンバ変数
 	// WindowsAPI
-	WinApp* winApp = nullptr;
+	WinApp* winApp_ = nullptr;
 
 	// DirectInputのインスタンス
 	ComPtr<IDirectInput8> directInput;
